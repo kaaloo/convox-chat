@@ -1,0 +1,5 @@
+if [ "$PROXY_PROTOCOL_ENABLED" == "Yes" ]
+then
+  sed -i "s/bind \*:5000/bind \*:5000 accept-proxy/g" /etc/haproxy/haproxy.cfg
+fi
+/usr/bin/supervisord
